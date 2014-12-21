@@ -1,17 +1,17 @@
-﻿生成启动时间为 2014/12/21 17:34:01。
+﻿生成启动时间为 2014/12/21 23:00:26。
      1>项目“C:\Users\sy\Documents\GitHub\Management-system-of-books\Management system of Books\Management system of Books.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt menu.cpp
-         menu.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt submenu.cpp
+         submenu.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sy\Documents\GitHub\Management-system-of-books\Debug\Management system of Books.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sy\Documents\GitHub\Management-system-of-books\Debug\Management system of Books.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sy\Documents\GitHub\Management-system-of-books\Debug\Management system of Books.lib" /MACHINE:X86 Debug\menu.obj
-         Debug\input.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sy\Documents\GitHub\Management-system-of-books\Debug\Management system of Books.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sy\Documents\GitHub\Management-system-of-books\Debug\Management system of Books.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sy\Documents\GitHub\Management-system-of-books\Debug\Management system of Books.lib" /MACHINE:X86 Debug\input.obj
          Debug\Main.obj
          Debug\output.obj
          Debug\sort.obj
+         Debug\submenu.obj
          Management system of Books.vcxproj -> C:\Users\sy\Documents\GitHub\Management-system-of-books\Debug\Management system of Books.exe
      1>已完成生成项目“C:\Users\sy\Documents\GitHub\Management-system-of-books\Management system of Books\Management system of Books.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.46
+已用时间 00:00:01.35

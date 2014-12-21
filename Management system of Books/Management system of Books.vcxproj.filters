@@ -27,7 +27,7 @@
     <ClCompile Include="sort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="menu.cpp">
+    <ClCompile Include="submenu.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
