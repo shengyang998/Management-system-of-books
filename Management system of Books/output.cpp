@@ -6,7 +6,7 @@ int output(BOOK *listHead){
 	
 	ofstream dataOutput;
 	dataOutput.open("./outData.txt",ofstream::app);//open output file
-	if (dataOutput.is_open){
+	if (dataOutput.is_open()){
 		//*p=listHead,
 		for (BOOK *p = listHead; p->next != 0;p=p->next){//do until at the end of the list
 			//Output to the file
@@ -14,6 +14,7 @@ int output(BOOK *listHead){
 				<< ' ' << p->price << ' ' << p->totalSalesVolume;
 
 		}
+		return 0;
 	}
 	else{
 		cout << "ERROR opening outData.txt";
