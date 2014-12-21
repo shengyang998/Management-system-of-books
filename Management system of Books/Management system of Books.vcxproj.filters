@@ -21,7 +21,13 @@
     <ClCompile Include="input.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="choice.cpp">
+    <ClCompile Include="output.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
