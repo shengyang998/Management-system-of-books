@@ -1,7 +1,8 @@
 #include "Main.h"
 
-int input(){
+BOOK input(){
 	BOOK *book = new BOOK;
+	BOOK *listHead = book;
 	string line;
 	ifstream dataInput;
 	dataInput.open("./inData.txt");//Open input file
@@ -19,12 +20,13 @@ int input(){
 				book->totalSalesVolume += book->monSalesVolume[i];
 			}
 			rec.ignore(100, '\n');
+			book = book->next;//Next one
 		}
 		dataInput.close();
 	}
 	else{//open failed
-		cout << "An error occured when reading the file.";
-		return -1;
+		//cout << "An error occured when reading the file.";
+		throw runtime_error("An error occured when reading the file.");
 	}
-	return 0;
+	return *listHead;
 }

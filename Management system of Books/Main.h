@@ -21,10 +21,4 @@ struct BOOK{
 	BOOK *next;
 };
 
-static void prompt_wait(){
-	cin.ignore(100, '\n');
-	cout << "\nPress Enter or Return to continue...";
-	cin.get();
-}
-
 #endif
