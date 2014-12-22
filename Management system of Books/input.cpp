@@ -11,8 +11,12 @@ int input(){
 			istringstream rec(line);
 			//get ISBN Category BookName AuthorName Price
 			rec >> book->ISBN >> book->category >> book->bookName >> book->authorName >> book->price;
-			for (int i = 0; i < 12;i++){//get latest 12 month sales volume
+			for (auto i : book->monSalesVolume){//get latest 12 month sales volume
 				rec >> book->monSalesVolume[i];
+			}
+			book->totalSalesVolume = 0;//Initialize TotalSalesVolume
+			for (auto i : book->monSalesVolume){//calc TotalSalesVolume
+				book->totalSalesVolume += book->monSalesVolume[i];
 			}
 			rec.ignore(100, '\n');
 		}

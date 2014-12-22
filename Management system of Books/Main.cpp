@@ -19,7 +19,7 @@ int main(){
 
 	switch (choice){
 	case 1:{//Load data from file
-		if (input() == 0){
+		if (input() == 0){//Input right
 		break;
 		}
 		else{
