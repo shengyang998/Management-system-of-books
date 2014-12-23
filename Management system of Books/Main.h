@@ -15,7 +15,7 @@ struct BOOK{
 	string ISBN;
 	string bookName;//Book Name
 	string authorName;//Author Name
-	float price;//Price
+	double price;//Price
 	long totalSalesVolume;//latest year total sales volume
 	long monSalesVolume[12];//latest 12 months sales volume
 	string category;//Category

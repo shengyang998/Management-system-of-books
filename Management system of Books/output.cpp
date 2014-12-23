@@ -32,8 +32,9 @@ int output(vector<BOOK> p){
 	dataOutput.open("./outData.txt", ofstream::app);//open output file
 	if (dataOutput.is_open()){
 		
-		for (int i : *p){//i:int ,p:BOOK
-			dataOutput << (p)[i].ISBN << ' ' << (p)[0].category << ' ';
+		for (auto i = p.begin(); i < p.end(); i++){
+			dataOutput << i->ISBN << ' ' << i->category << ' ' << i->bookName << ' ' << i->authorName
+				<< ' ' << i->price << ' ' << i->totalSalesVolume;
 		}
 		return 0;
 	}

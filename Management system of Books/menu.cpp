@@ -1,6 +1,6 @@
 #include "main.h"
 
-BOOK search(BOOK *listHead, string keyword);
+int search(BOOK *listHead, string keyword);
 
 
 int menu(){
@@ -9,7 +9,7 @@ int menu(){
 		<< "********************************************************************************\n"
 		<< "*     1.Get the books' info form a file.     2.Output the info to a file       *\n"
 		<< "********************************************************************************\n";
-	while (!(cin >> choice) || choice != 1 && choice != 2 && choice != 0){
+	while (!(cin >> choice) || (choice != 1 && choice != 2 && choice != 0)){
 		cin.clear();
 		cin.ignore(100, '\n');
 		cout << "Error when you choose what to do. Please try again: ";
@@ -35,12 +35,13 @@ int submenu(BOOK *listHead){
 			cin.ignore(100, '\n');
 			cout << "Error when you choose what to do. Please try again: ";
 		}
+		cin.ignore();
 		switch (choice){
-		case 0:{//return
+		case 0:{//EXIT
 			return 0;
 			break;			
 		}
-		case 1:{
+		case 1:{//Search and output
 			string keyword;
 			cout << "Input the keyword that you want to search: \n";
 			getline(cin, keyword);

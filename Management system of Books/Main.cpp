@@ -11,6 +11,9 @@ int main(){
 	do{
 		choice0 = menu();
 		switch (choice0){//start of menu
+		case 0:{
+			break;
+		}
 		case 1:{//Load data from file
 			head = input();//input() returns the head of the list
 			break;
