@@ -22,3 +22,23 @@ int output(BOOK *listHead){
 	}
 
 }
+
+int output(vector<BOOK> p){
+
+	
+
+	string line;
+	ofstream dataOutput;
+	dataOutput.open("./outData.txt", ofstream::app);//open output file
+	if (dataOutput.is_open()){
+		
+		for (int i : *p){//i:int ,p:BOOK
+			dataOutput << (p)[i].ISBN << ' ' << (p)[0].category << ' ';
+		}
+		return 0;
+	}
+	else{
+		cout << "ERROR opening outData.txt";
+		return -1;
+	}
+}
