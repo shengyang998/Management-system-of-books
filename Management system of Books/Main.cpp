@@ -6,15 +6,16 @@ BOOK input();
 void prompt_wait();
 
 int main(){
-	int choice = menu();
-	while (choice != 0){
+	int choice;
+	do{
+		choice = menu();
 		switch (choice){//start of menu
 		case 1:{//Load data from file
 			//BOOK head = input();
 			break;
 		}
 		case 2:{
-			submenu();
+			choice = submenu();
 			break;
 		}
 		default:{
@@ -22,7 +23,7 @@ int main(){
 			break;
 		}
 		}
-	}
+	} while (choice != 0);
 //end of menu
 	prompt_wait();
 return 0;

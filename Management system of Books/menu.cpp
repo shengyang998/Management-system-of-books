@@ -36,6 +36,7 @@ int submenu(){
 		}
 		switch (choice){
 		case 0:{
+			return 0;
 			break;			
 		}
 		case 1:{
