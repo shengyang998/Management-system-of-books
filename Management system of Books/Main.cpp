@@ -1,21 +1,22 @@
 #include "Main.h"
 
 int menu();
-int submenu();
-BOOK input();
+int submenu(BOOK *listHead);
+BOOK *input();
 void prompt_wait();
 
 int main(){
-	int choice;
+	int choice0, choice1;
+	BOOK *head = nullptr;
 	do{
-		choice = menu();
-		switch (choice){//start of menu
+		choice0 = menu();
+		switch (choice0){//start of menu
 		case 1:{//Load data from file
-			//BOOK head = input();
+			head = input();//input() returns the head of the list
 			break;
 		}
 		case 2:{
-			choice = submenu();
+			choice1 = submenu(head);//choice1 is to get the return of submenu
 			break;
 		}
 		default:{
@@ -23,7 +24,7 @@ int main(){
 			break;
 		}
 		}
-	} while (choice != 0);
+	} while (choice0 != 0);
 //end of menu
 	prompt_wait();
 return 0;

@@ -1,6 +1,6 @@
 #include "Main.h"
 
-BOOK input(){
+BOOK *input(){
 	BOOK *book = new BOOK;
 	BOOK *listHead = book;
 	string line;
@@ -28,5 +28,5 @@ BOOK input(){
 		//cout << "An error occured when reading the file.";
 		throw runtime_error("An error occured when reading the file.");
 	}
-	return *listHead;
+	return listHead;
 }
