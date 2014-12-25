@@ -9,7 +9,7 @@ int del(BOOK *listHead, string delstr){
 	char a = 'n';
 	int i = 0;
 	while (listHead != nullptr){//list is not empty
-		if (i > 1){//introduce p2 to point to the former node when i>1
+		if (i > 1){//introduce p2 to point to the former node of p1 when i>1
 			p2 = p1;
 			p1 = p1->next;
 		}
@@ -46,10 +46,6 @@ int del(BOOK *listHead, string delstr){
 				else continue;
 			}
 		}
-	}
-	if (listHead == nullptr){//list is empty
-		cout << "The list is empty, please import data!" << endl;
-		return -1;
 	}
 	output(listHead);
 	return 0;

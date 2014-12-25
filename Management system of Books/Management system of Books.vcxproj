@@ -79,6 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="del.cpp" />
+    <ClCompile Include="ifempty.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="insert.cpp" />
     <ClCompile Include="Main.cpp" />

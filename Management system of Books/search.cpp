@@ -14,6 +14,12 @@ int search(BOOK *listHead, string keyword){//get listHead and keyword
 			p.push_back(*p1);
 		}
 	}
-	output(p);
+	int tempflag = output(p);
+	if (tempflag == 0){
+		cout << "Output complete.\n";
+	}
+	else if (tempflag == -1){
+		cout << "Output failed.\n";
+	}
 	return 0;
 }

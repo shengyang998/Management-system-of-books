@@ -1,6 +1,6 @@
 #include "Main.h"
 
-BOOK sort(BOOK *listHead){
+int sort(BOOK *listHead){
 
-	return *listHead;
+	return 0;
 }
