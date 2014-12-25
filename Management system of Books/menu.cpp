@@ -1,7 +1,7 @@
 #include "main.h"
 
 int search(BOOK *listHead, string keyword);
-
+int del(BOOK *listHead, string delstr);
 
 int menu(){
 	int choice;
