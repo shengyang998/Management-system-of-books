@@ -29,10 +29,10 @@ int del(BOOK *listHead, string delstr){
 				delete p1;
 			}
 		}
-		return 0;
 	}
 	if (listHead == nullptr){//list is empty
 		cout << "The list is empty, please import data!" << endl;
 		return -1;
 	}
+	return 0;
 }

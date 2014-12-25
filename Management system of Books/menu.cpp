@@ -1,6 +1,8 @@
 #include "main.h"
 
 int search(BOOK *listHead, string keyword);
+int output(vector<BOOK> p);
+int output(BOOK *listHead);
 int del(BOOK *listHead, string delstr);
 
 int menu(){
@@ -57,7 +59,8 @@ int submenu(BOOK *listHead){
 			cout << "Input what you want to delete, including ISBN Category BookName or AutherName: \n";
 			getline(cin, delstr);
 			if (del(listHead, delstr) == 0){
-				cout << "\nDelete succeed!\n";
+				cout << "\nDelete succeed!\nThe data has been output to ./outData.txt";
+				output(listHead);
 			}
 			else{
 				cout << "\nDelete failed!\n";
