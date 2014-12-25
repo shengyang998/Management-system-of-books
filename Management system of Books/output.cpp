@@ -1,9 +1,7 @@
 #include "Main.h"
 
 int output(BOOK *listHead){
-
 	string line;
-	
 	ofstream dataOutput;
 	dataOutput.open("./outData.txt",ofstream::app);//open output file
 	if (dataOutput.is_open()){
@@ -12,7 +10,6 @@ int output(BOOK *listHead){
 			//Output to the file
 			dataOutput << p->ISBN << ' ' << p->category << ' ' << p->bookName << ' ' << p->authorName
 				<< ' ' << p->price << ' ' << p->totalSalesVolume;
-
 		}
 	}
 	else{
