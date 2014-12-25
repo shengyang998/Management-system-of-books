@@ -14,13 +14,12 @@ int output(BOOK *listHead){
 				<< ' ' << p->price << ' ' << p->totalSalesVolume;
 
 		}
-		return 0;
 	}
 	else{
 		cout << "ERROR opening outData.txt";
 		return -1;
 	}
-
+	return 0;
 }
 
 int output(vector<BOOK> p){
@@ -39,11 +38,11 @@ int output(vector<BOOK> p){
 			dataOutput << it->ISBN << '|' << it->category << '|' << it->bookName << '|' << it->authorName
 				<< '|' << it->price << '|' << it->totalSalesVolume << endl;
 		}
-		return 0;
 	}
 	else{
 		cout << "ERROR opening outData.txt";
 		return -1;
 	}
 	dataOutput.close();//close the file
+	return 0;
 }

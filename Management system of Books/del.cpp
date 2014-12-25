@@ -1,5 +1,7 @@
 #include "Main.h"
 
+int output(BOOK *listHead);
+
 int del(BOOK *listHead, string delstr){
 	BOOK *p1 = listHead;
 	BOOK *p2 = nullptr;
@@ -34,5 +36,6 @@ int del(BOOK *listHead, string delstr){
 		cout << "The list is empty, please import data!" << endl;
 		return -1;
 	}
+	output(listHead);
 	return 0;
 }
