@@ -4,11 +4,12 @@ BOOK *input(){
 	int n = 0;
 	BOOK *book = new BOOK;
 	BOOK *listHead = nullptr;
+	BOOK *tptr = nullptr;
 	string line;
 	ifstream dataInput;
 	dataInput.open("D:/inData.txt");//Open input file
 	if (dataInput.is_open()){//opened succeed
-		for (; !dataInput.eof();){//Load data from file until to the end of the end
+		while (!dataInput.eof()){//Load data from file until to the end of the end
 			n++;
 			getline(dataInput, line);
 			istringstream rec(line);
@@ -25,10 +26,12 @@ BOOK *input(){
 			if (n == 1){
 				listHead = book;
 			}
+			tptr = book;
 			book->next = new BOOK;//new the next one
 			book = book->next;//point to the next one
 		}
 		delete book;
+		tptr->next = nullptr;
 		book = nullptr;
 		dataInput.close();
 	}
