@@ -27,7 +27,7 @@ int submenu(BOOK *listHead){
 		cout << "\nPlease choose what you want to output to the file.\n"
 			<< "*******************************************************************************\n"
 			<< "*    1.Search and output          2.Insert and output                         *\n"
-			<< "*    3.Delete and output          4.Sort and output                           *\n"
+			<< "*    3.Remove and output          4.Sort and output                           *\n"
 			<< "*    5.Output books from a selected category                                  *\n"
 			<< "*    6.Output from a selected price interval                                  *\n"
 			<< "*    7.Output top 150             0.Return to main menu                       *\n"
