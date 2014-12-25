@@ -53,6 +53,15 @@ int submenu(BOOK *listHead){
 			break;
 		}
 		case 3:{
+			string delstr;
+			cout << "Input what you want to delete, including ISBN Category BookName or AutherName: \n";
+			getline(cin, delstr);
+			if (del(listHead, delstr) == 0){
+				cout << "\nDelete succeed!\n";
+			}
+			else{
+				cout << "\nDelete failed!\n";
+			}
 			break;
 		}
 		case 4:{
