@@ -8,7 +8,7 @@ int del(BOOK *listHead, string delstr){
 	BOOK *p3 = nullptr;
 	char a = 'n';
 	int i = 0;
-	while (listHead != nullptr){//list is not empty
+	while (p1 != nullptr){//list is not empty
 		if (i > 1){//introduce p2 to point to the former node of p1 when i>1
 			p2 = p1;
 			p1 = p1->next;
@@ -16,12 +16,14 @@ int del(BOOK *listHead, string delstr){
 		i++;
 		if ((p1->ISBN == delstr) || (p1->authorName == delstr) || (p1->bookName == delstr) || (p1->category == delstr)){//hitted
 			cout << "Find the book, do you really want to remove it?[Y/N]";
-			while (!(cin >> a) || (a != 'y') || (a != 'Y') || (a != 'n') || (a != 'N')){
+			while (!(cin >> a) || ((a != 'y') && (a != 'Y') && (a != 'n') && (a != 'N'))){
 				cin.clear();
 				cin.ignore(100, '\n');
 				cout << "Error when you choose what to do. Please try again: ";
 			}
-			if (a == 'y' || a == 'Y'){
+
+			//delete or not
+			if (a == 'y' || a == 'Y'){//Y delete
 				if ((i == 1) && (p1->next != nullptr)){//p1 pointed to the head of the list
 					listHead = p1->next;//move the head
 					delete p1;//delete the old head
@@ -39,14 +41,27 @@ int del(BOOK *listHead, string delstr){
 					delete p1;
 				}
 			}
-			else {
-				if (p1->next != nullptr){
-					p1 = p1->next;
-				}
-				else continue;
+			else if (a == 'n' || a == 'N'){//N don't delete
+				cout << "As your wish.\n";
+				return 1;
 			}
+			
+			//if p1 pointed to the last one
+			if (p1->next != nullptr){//p1 has not yet pointed to the last node
+				p1 = p1->next;
+			}
+			else if (p1->next == nullptr){//p1 pointed to the last node
+				break;
+			}
+
+			//output
+			output(listHead);
+			return 0;
 		}
 	}
-	output(listHead);
+	if (p1 == nullptr){
+		cout << "Error. Did't find the book.";
+		return -1;
+	}
 	return 0;
 }

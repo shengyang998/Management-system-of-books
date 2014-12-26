@@ -1,5 +1,4 @@
 The books are:
 ISBN|category|BookName|AuthorName|Price|TotalSalesVolume
-jsodhha|fuck|cao|ysy|88|68
 9787513300711|social|OutOfControl|KevinKelly|52.8|7800
 9787550227392|philosophy|DeathOpenYelyCourses|ShellyKagan|29.8|1278

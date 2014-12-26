@@ -64,7 +64,7 @@ int submenu(BOOK *listHead){
 				cout << "Input what you want to delete, including ISBN Category BookName or AutherName: \n";
 				getline(cin, delstr);
 				if (del(listHead, delstr) == 0){
-					cout << "\nDelete succeed!\nThe data has been output to ./outData.txt";
+					cout << "\nDelete succeed!\nThe data has been output to ./outData.txt\n";
 				}
 				else{
 					cout << "\nDelete failed!\n";

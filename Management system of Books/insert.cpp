@@ -36,7 +36,7 @@ int insert(BOOK *listHead, bool flag){
 			//insert to the head
 			book->next = listHead;
 			listHead = book;
-			//////////////////////////////////////
+			//////////////////Output////////////////////
 			cout << "Warning: The books have not been sorted. But they will be output.\n";
 			int tempflag = output(listHead);
 			if (tempflag == 0){
@@ -45,7 +45,7 @@ int insert(BOOK *listHead, bool flag){
 			else if (tempflag == -1){
 				cout << "Output failed.\n";
 			}
-			//////////////////////////////////////
+			//////////////////Output////////////////////
 			return 1;//stop the function running
 		}
 	}
@@ -68,10 +68,9 @@ int insert(BOOK *listHead, bool flag){
 		BOOK *p = listHead;
 		BOOK *tptr = nullptr;
 		while (p != nullptr){//traverse the list
-			if ((p->ISBN == book->ISBN) || (p->authorName == book->authorName) || (p->bookName == book->bookName) || (p->category == book->category)){//hitted
-				/////////////////////////////////////////////////////////////////////////
+			if ((p->ISBN == book->ISBN) || (p->authorName == book->authorName) || (p->bookName == book->bookName) 
+				|| (p->category == book->category)){//hitted
 				cout << "There is already a same book, please chack your input" << endl;
-				/////////////////////////////////////////////////////////////////////////
 				return -1;//Find the same book and stop the function running
 			}
 			else if (p->next != nullptr){//didn't hit and p has not yet pointed to the end
@@ -94,7 +93,7 @@ int insert(BOOK *listHead, bool flag){
 		break;//break the switch
 	}
 	}
-	//////////////////////////////////////////////
+	//////////////////Output////////////////////
 	cout << "Insert complete, the data is being output.\n";
 	int tempflag = output(listHead);
 	if (tempflag == 0){
@@ -103,6 +102,6 @@ int insert(BOOK *listHead, bool flag){
 	else if (tempflag == -1){
 		cout << "Output failed.\n";
 	}
-	//////////////////////////////////////////////
+	//////////////////Output////////////////////
 	return 0;
 }
