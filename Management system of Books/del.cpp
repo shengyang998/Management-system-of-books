@@ -27,6 +27,7 @@ int del(BOOK *listHead, string delstr){
 				if ((i == 1) && (p1->next != nullptr)){//p1 pointed to the head of the list
 					listHead = p1->next;//move the head
 					delete p1;//delete the old head
+					p1 = listHead;
 				}
 				else if ((i != 1) && (p1->next == nullptr)){//p1 pointed to the end of the list
 					p2->next = nullptr;

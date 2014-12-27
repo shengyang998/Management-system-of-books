@@ -1,7 +1,7 @@
 #include "Main.h"
 
 int insert(BOOK *listHead, bool flag);
-int sort(BOOK *listHead);
+BOOK *sortbyprice(BOOK *listHead);
 int search(BOOK *listHead, string keyword);
 int output(vector<BOOK> p);
 int output(BOOK *listHead);
@@ -32,11 +32,10 @@ int submenu(BOOK *listHead){
 			<< "*******************************************************************************\n"
 			<< "*    1.Search and output          2.Insert and output                         *\n"
 			<< "*    3.Remove and output          4.Sort by Price and output                  *\n"
-			<< "*    5.Output books from a selected category                                  *\n"
-			<< "*    6.Output from a selected price interval                                  *\n"
-			<< "*    7.Output top 150             0.Return to main menu                       *\n"
+			<< "*    5.Output from a selected price interval                                  *\n"
+			<< "*    6.Output top 150             0.Return to main menu                       *\n"
 			<< "*******************************************************************************\n";
-		while (!(cin >> choice) || (choice > 7 || choice < 0)){
+		while (!(cin >> choice) || (choice > 6 || choice < 0)){
 			cin.clear();
 			cin.ignore(100, '\n');
 			cout << "Error when you choose what to do. Please try again: ";
@@ -72,8 +71,14 @@ int submenu(BOOK *listHead){
 				break;
 			}
 			case 4:{
-				if (sort(listHead) == 0){
+				if (listHead = sortbyprice(listHead)){
 					sortFlag = 1;
+				}
+				if (output(listHead) == 0){
+					cout << "Output succeed.\n";
+				}
+				else{
+					cout << "Output failed.\n";
 				}
 				break;
 			}
@@ -81,9 +86,6 @@ int submenu(BOOK *listHead){
 				break;
 			}
 			case 6:{
-				break;
-			}
-			case 7:{
 				break;
 			}
 			default:{

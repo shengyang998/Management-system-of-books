@@ -1,6 +1,6 @@
 #include "Main.h"
 
-int sort(BOOK *listHead);
+BOOK *sortbyprice(BOOK *listHead);
 int output(BOOK *listHead);
 
 int insert(BOOK *listHead, bool flag){
@@ -14,7 +14,7 @@ int insert(BOOK *listHead, bool flag){
 			cout << "Error when you choose what to do. Please try again: ";
 		}
 		if (a == 'y' || a == 'Y'){//sort and keep on
-			sort(listHead);
+			sortbyprice(listHead);
 			flag = 1;
 		}
 		else if (a == 'n' || a == 'N'){
@@ -55,7 +55,7 @@ int insert(BOOK *listHead, bool flag){
 			cout << "Warning: The books have not been sorted. But they will be output.\n";
 			int tempflag = output(listHead);
 			if (tempflag == 0){
-				cout << "Output complete.\n";
+				cout << "Output succeed.\n";
 			}
 			else if (tempflag == -1){
 				cout << "Output failed.\n";

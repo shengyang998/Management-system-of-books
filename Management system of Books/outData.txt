@@ -1,0 +1,4 @@
+The books are:
+ISBN|category|BookName|AuthorName|Price|TotalSalesVolume
+9787550227392|philosophy|DeathOpenYelyCourses|ShellyKagan|29.8|1278
+9787513300711|social|OutOfControl|KevinKelly|52.8|7800

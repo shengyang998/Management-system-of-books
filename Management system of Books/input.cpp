@@ -19,7 +19,7 @@ BOOK *input(){
 				rec >> book->monSalesVolume[i];
 			}
 			book->totalSalesVolume = 0;//Initialize TotalSalesVolume
-			for (int i = 0; i <= 11;i++){//calc TotalSalesVolume
+			for (int i = 0; i <= 11; i++){//calc TotalSalesVolume
 				book->totalSalesVolume += book->monSalesVolume[i];
 			}
 			rec.ignore(100, '\n');
@@ -31,7 +31,9 @@ BOOK *input(){
 			book = book->next;//point to the next one
 		}
 		delete book;
-		tptr->next = nullptr;
+		if (tptr != nullptr){
+			tptr->next = nullptr;
+		}
 		book = nullptr;
 		dataInput.close();
 	}

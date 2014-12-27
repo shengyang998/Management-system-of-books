@@ -1,6 +1,6 @@
 #include "Main.h"
 
-int output(BOOK *listHead){
+int output(BOOK *listHead){//0:succeed 1:cannot open the file
 	string line;
 	ofstream dataOutput;
 	dataOutput.open("./outData.txt");//open the file and clear it
