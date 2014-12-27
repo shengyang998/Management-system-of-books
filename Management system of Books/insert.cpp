@@ -24,9 +24,17 @@ int insert(BOOK *listHead, bool flag){
 			BOOK *book = new BOOK;
 			cout << "Input what you want to insert in this format:\n"
 				<< "ISBN category BookName AuthorName Price MonthlySalesVolume*12\n";
-			cin >> book->ISBN >> book->category >> book->bookName >> book->authorName >> book->price;
+			while (!(cin >> book->ISBN >> book->category >> book->bookName >> book->authorName >> book->price)){
+				cin.clear();
+				cin.ignore();
+				cout << "Error when you input the price, please check your input and try again.\n";
+			}
 			for (int i = 0; i <= 11; i++){//get latest 12 month sales volume
-				cin >> book->monSalesVolume[i];
+				while (!(cin >> book->monSalesVolume[i])){
+					cin.clear();
+					cin.ignore();
+					cout << "Error when you input the Sales Volume, please check your input and try again.\n";
+				}
 			}
 			book->totalSalesVolume = 0;//Initialize TotalSalesVolume
 			for (int i = 0; i <= 11; i++){//calculate TotalSalesVolume
