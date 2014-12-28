@@ -63,8 +63,7 @@ BOOK *sortbyprice(BOOK *listHead){
 		}
 
 		if (p0->next != nullptr){
-			p0f = p0;
-			p0 = p0->next;
+			p0f = pm;
 		}
 		else{
 			break;
