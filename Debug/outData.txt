@@ -1,3 +1,0 @@
-The books are:
-ISBN|category|BookName|AuthorName|Price|TotalSalesVolume
-9787513300711 social OutOfControl KevinKelly 52.8 7800

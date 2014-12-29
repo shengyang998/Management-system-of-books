@@ -6,6 +6,7 @@ int del(BOOK *listHead, string delstr){
 	BOOK *p1 = listHead;
 	BOOK *p2 = nullptr;
 	BOOK *p3 = nullptr;
+	BOOK *tp = nullptr;
 	char a = 'n';
 	int i = 0;
 	while (p1 != nullptr){//list is not empty
@@ -32,6 +33,7 @@ int del(BOOK *listHead, string delstr){
 				else if ((i != 1) && (p1->next == nullptr)){//p1 pointed to the end of the list
 					p2->next = nullptr;
 					delete p1;
+					p1 = nullptr;
 				}
 				else if (listHead->next == nullptr){//the list has only one node
 					delete listHead;
@@ -40,6 +42,7 @@ int del(BOOK *listHead, string delstr){
 				else {//p1 pointed to the normal node
 					p2->next = p1->next;
 					delete p1;
+					p1 = p2;
 				}
 			}
 			else if (a == 'n' || a == 'N'){//N don't delete

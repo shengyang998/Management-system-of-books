@@ -2,72 +2,46 @@
 
 BOOK *sortbyprice(BOOK *listHead){
 
-	BOOK *p0 = listHead;//iterator
-	//BOOK *p1 = listHead;//compare with p0
-	BOOK *tptr = listHead;//compare with p0 and p1
+	BOOK *p = listHead, *pf = nullptr;
 
-	//p*f is the former node of p*
-	BOOK *pm = nullptr;
-	BOOK *p0f = nullptr;
-	//BOOK *p1f = nullptr;
-	BOOK *tptrf = nullptr;
-	BOOK *pmf = nullptr;
-	int i = 0;
+	BOOK *pm = p, *tp = nullptr, *tpf = nullptr, *pmf = nullptr;
 
-	while (p0 != nullptr){
-		i++;
-		//p1 = p0;
-		tptr = pm = p0;
-		if (i == 1){//The first one
-			while (tptr != nullptr){//traverse the list to find the min price
-				if (tptr->price < pm->price){
-					pm = tptr;//the min is pm
-					pmf = tptrf;
-				}
+	for (int i = 0; p != nullptr; pf = p, p = p->next, i++){
+		tp = p->next;
+		pm = p;
 
-				if (tptr->next != nullptr){
-					tptrf = tptr;
-					tptr = tptr->next;
-				}
-				else{
-					break;
-				}
+		//find the min form p to end
+		for (int n = 0; tp != 0; tpf = tp, tp = tp->next, n++){
+			if (tp->price < pm->price){
+				pmf = tpf;
+				pm = tp;
 			}
-			if (pm->price < p0->price){//if the min is smaller than p0, put the min to the front of p0 and change the listHead
+		}
+
+		//
+		if (i == 0){//the listHead should be changed if the first one is hitted
+			if (pmf->next != nullptr){
 				pmf->next = pm->next;
-				pm->next = p0;
-				listHead = pm;
 			}
-		}
-		else{//others
-
-			while (tptr != nullptr){
-				if (tptr->price < pm->price){
-					pm = tptr;//the min is pm
-					pmf = tptrf;
-				}
-
-				if (tptr->next != nullptr){
-					tptrf = tptr;
-					tptr = tptr->next;
-				}
-				else{
-					break;
-				}
-			}
-			if (pm->price < p0->price){//if the min is smaller than p0, put the min to the front of p0
-				p0f = pm;
-				pmf = pm->next;
-				pm->next = p0;
-			}
+			pm->next = p;
+			listHead = pm;
+			p = pm;
 		}
 
-		if (p0->next != nullptr){
-			p0f = pm;
-		}
-		else{
-			break;
+		else{//not the first one
+			
+			swap(p->authorName, pm->authorName);
+			swap(p->bookName, pm->bookName);
+			swap(p->category, pm->category);
+			swap(p->ISBN, pm->ISBN);
+			for (int i = 0; i < 12; i++){
+				swap(p->monSalesVolume[i], pm->monSalesVolume[i]);
+			}
+			swap(p->price, pm->price);
+			swap(p->totalSalesVolume, pm->totalSalesVolume);
+
 		}
 	}
+
 	return listHead;
 }
