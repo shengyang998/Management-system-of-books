@@ -1,0 +1,6 @@
+The books are:
+ISBN|category|BookName|AuthorName|Price|TotalSalesVolume
+9787550227392|philosophy|DeathOpenYelyCourses|ShellyKagan|29.8|1278
+This is the end.9787510828188|literature|仓央嘉措传|王臣|38.2|1386
+This is the end.7539945540|literature|生如夏花|Tagore|18|1506
+This is the end.

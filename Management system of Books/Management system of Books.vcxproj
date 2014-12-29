@@ -78,6 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="chooseprice.cpp" />
     <ClCompile Include="del.cpp" />
     <ClCompile Include="ifempty.cpp" />
     <ClCompile Include="input.cpp" />

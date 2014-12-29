@@ -12,7 +12,12 @@ int del(BOOK *listHead, string delstr){
 	while (p1 != nullptr){//list is not empty
 		if (i >= 1){//introduce p2 to point to the former node of p1 when i>1
 			p2 = p1;
-			p1 = p1->next;
+			if (p1->next != nullptr){
+				p1 = p1->next;
+			}
+			else{
+				break;
+			}
 		}
 		i++;
 		if ((p1->ISBN == delstr) || (p1->authorName == delstr) || (p1->bookName == delstr) || (p1->category == delstr)){//hitted
@@ -63,7 +68,7 @@ int del(BOOK *listHead, string delstr){
 		}
 
 		if (p1 == nullptr){
-			cout << "Error. Did't find the book.";
+			cout << "Error. Did't find any more book.\n";
 			return -1;
 		}
 	}

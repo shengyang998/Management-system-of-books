@@ -2,15 +2,17 @@
 
 int insert(BOOK *listHead, bool flag);
 BOOK *sortbyprice(BOOK *listHead);
+BOOK *sortbySV(BOOK *listHead);
 int search(BOOK *listHead, string keyword);
 int output(vector<BOOK> p);
 int output(BOOK *listHead);
 int del(BOOK *listHead, string delstr);
 int iflistempty(BOOK *listHead);
+int choosePrice(BOOK *listHead, int min, int max);
 
 int menu(){
 	int choice;
-	cout << "What do you want to do? Input 0 to exit.\n"
+	cout << "\nWhat do you want to do? Input 0 to exit.\n"
 		<< "*******************************************************************************\n"
 		<< "*     1.Get the books' info form a file.     2.Output the info to a file      *\n"
 		<< "*******************************************************************************\n";
@@ -32,8 +34,9 @@ int submenu(BOOK *listHead){
 			<< "*******************************************************************************\n"
 			<< "*    1.Search and output          2.Insert and output                         *\n"
 			<< "*    3.Remove and output          4.Sort by Price and output                  *\n"
-			<< "*    5.Output from a selected price interval                                  *\n"
-			<< "*    6.Output top 150             0.Return to main menu                       *\n"
+			<< "*    5.Sort by Sales Volume and output                                        *\n"
+			<< "*    6.Output from a selected price interval                                  *\n"
+			<< "*    0.Return to main menu                                                    *\n"
 			<< "*******************************************************************************\n";
 		while (!(cin >> choice) || (choice > 6 || choice < 0)){
 			cin.clear();
@@ -87,9 +90,36 @@ int submenu(BOOK *listHead){
 				break;
 			}
 			case 5:{
-				break;
+				listHead = sortbySV(listHead);
+				if (output(listHead) == 0){
+					cout << "Output succeed.\n";
+				}
+				else{
+					cout << "Output failed.\n";
+				}
 			}
 			case 6:{
+				int minPrice, maxPrice;
+				cout << "Please input the minimal price:";
+				while (!(cin >> minPrice)){
+					cin.clear();
+					cin.ignore(100, '\n');
+					cout << "Input Error, please try again:";
+				}
+				cin.ignore(100, '\n');
+				cout << "Please input the maximal price:";
+				
+				while (!(cin >> maxPrice)){
+					cin.clear();
+					cin.ignore();
+					cout << "Input Error, please try again:";
+				}
+				if (choosePrice(listHead, minPrice, maxPrice) == 0){
+					cout << "Done.\n";
+				}
+				else{
+					cout << "Error.\n";
+				}
 				break;
 			}
 			default:{
