@@ -7,7 +7,7 @@ BOOK *input(){
 	BOOK *tptr = nullptr;
 	string line;
 	ifstream dataInput;
-	dataInput.open("D:/inData.txt");//Open input file
+	dataInput.open("./inData.txt");//Open input file
 	if (dataInput.is_open()){//opened succeed
 		while (!dataInput.eof()){//Load data from file until to the end of the end
 			n++;
