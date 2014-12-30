@@ -97,6 +97,7 @@ int submenu(BOOK *listHead){
 				else{
 					cout << "Output failed.\n";
 				}
+				break;
 			}
 			case 6:{
 				int minPrice, maxPrice;
@@ -127,6 +128,9 @@ int submenu(BOOK *listHead){
 				break;
 			}
 			}
+		}
+		else{
+			cout << "The list is empty, maybe the data has not been input.\nPlease input the data from ./inData.txt\n";
 		}
 	} while (choice != 0);
 	return 0;

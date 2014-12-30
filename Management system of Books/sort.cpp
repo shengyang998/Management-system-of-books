@@ -4,50 +4,29 @@ BOOK *sortbyprice(BOOK *listHead){
 
 	BOOK *p = listHead, *pf = nullptr;
 
-	BOOK *pm = p, *tp = nullptr, *tpf = nullptr, *pmf = nullptr;
+	BOOK *pm = p, *tp = nullptr;
 
 	for (int i = 0; p != nullptr; pf = p, p = p->next, i++){
 		tp = p->next;
 		pm = p;
 
-		//find the min form p to end
-		for (int n = 0; tp != 0; tpf = tp, tp = tp->next, n++){
+		//find the min price from p to end
+		for (int n = 0; tp != 0; tp = tp->next, n++){
 			if (tp->price < pm->price){
-				pmf = tpf;
 				pm = tp;
 			}
 		}
-
-		//sorting
-		if (i == 0){//the listHead should be changed if the first one is hitted
-			if (pmf != nullptr){
-				if (pmf->next != nullptr){
-					pmf->next = pm->next;
-				}
-			}
-			else{
-				throw runtime_error("Something unexcepted has happen that pmf is empty.");
-			}
-			pm->next = p;
-			listHead = pm;
-			p = pm;
+		swap(p->authorName, pm->authorName);
+		swap(p->bookName, pm->bookName);
+		swap(p->category, pm->category);
+		swap(p->ISBN, pm->ISBN);
+		for (int i = 0; i < 12; i++){
+			swap(p->monSalesVolume[i], pm->monSalesVolume[i]);
 		}
+		swap(p->price, pm->price);
+		swap(p->totalSalesVolume, pm->totalSalesVolume);
 
-		else{//not the first one
-			
-			swap(p->authorName, pm->authorName);
-			swap(p->bookName, pm->bookName);
-			swap(p->category, pm->category);
-			swap(p->ISBN, pm->ISBN);
-			for (int i = 0; i < 12; i++){
-				swap(p->monSalesVolume[i], pm->monSalesVolume[i]);
-			}
-			swap(p->price, pm->price);
-			swap(p->totalSalesVolume, pm->totalSalesVolume);
-
-		}
 	}
-
 	return listHead;
 }
 
@@ -55,49 +34,28 @@ BOOK *sortbySV(BOOK *listHead){
 
 	BOOK *p = listHead, *pf = nullptr;
 
-	BOOK *pm = p, *tp = nullptr, *tpf = nullptr, *pmf = nullptr;
+	BOOK *pm = p, *tp = nullptr;
 
 	for (int i = 0; p != nullptr; pf = p, p = p->next, i++){
 		tp = p->next;
 		pm = p;
 
-		//find the max form p to end
-		for (int n = 0; tp != 0; tpf = tp, tp = tp->next, n++){
+		//find the max Sales Volume from p to end
+		for (int n = 0; tp != 0; tp = tp->next, n++){
 			if (tp->totalSalesVolume > pm->totalSalesVolume){
-				pmf = tpf;
 				pm = tp;
 			}
 		}
-
-		//sorting
-		if (i == 0){//the listHead should be changed if the first one is hitted
-			if (pmf != nullptr){
-				if (pmf->next != nullptr){
-					pmf->next = pm->next;
-				}
-			}
-			else{
-				throw runtime_error("Something unexcepted has happen that pmf is empty.");
-			}
-			pm->next = p;
-			listHead = pm;
-			p = pm;
+		swap(p->authorName, pm->authorName);
+		swap(p->bookName, pm->bookName);
+		swap(p->category, pm->category);
+		swap(p->ISBN, pm->ISBN);
+		for (int i = 0; i < 12; i++){
+			swap(p->monSalesVolume[i], pm->monSalesVolume[i]);
 		}
+		swap(p->price, pm->price);
+		swap(p->totalSalesVolume, pm->totalSalesVolume);
 
-		else{//not the first one
-
-			swap(p->authorName, pm->authorName);
-			swap(p->bookName, pm->bookName);
-			swap(p->category, pm->category);
-			swap(p->ISBN, pm->ISBN);
-			for (int i = 0; i < 12; i++){
-				swap(p->monSalesVolume[i], pm->monSalesVolume[i]);
-			}
-			swap(p->price, pm->price);
-			swap(p->totalSalesVolume, pm->totalSalesVolume);
-
-		}
 	}
-
 	return listHead;
 }

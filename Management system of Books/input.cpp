@@ -39,7 +39,7 @@ BOOK *input(){
 	}
 	else{//open failed
 		//cout << "An error occured when reading the file.";
-		throw runtime_error("An error occured when reading the file.");
+		return listHead;
 	}
 	return listHead;
 }

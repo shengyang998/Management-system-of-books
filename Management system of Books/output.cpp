@@ -12,7 +12,7 @@ int output(BOOK *listHead){//0:succeed 1:cannot open the file
 			dataOutput << p->ISBN << '|' << p->category << '|' << p->bookName << '|' << p->authorName
 				<< '|' << p->price << '|' << p->totalSalesVolume << endl;
 		}
-		cout << "This is the end.";
+		dataOutput << "This is the end.";
 		dataOutput.close();//close the file
 	}
 	else{
@@ -33,7 +33,7 @@ int output(vector<BOOK> p){
 			dataOutput << it->ISBN << '|' << it->category << '|' << it->bookName << '|' << it->authorName
 				<< '|' << it->price << '|' << it->totalSalesVolume << endl;
 		}
-		cout << "This is the end.";
+		dataOutput << "This is the end.";
 		dataOutput.close();//close the file
 	}
 	else{
