@@ -5,8 +5,6 @@ int output(BOOK *listHead);
 int del(BOOK *listHead, string delstr){
 	BOOK *p1 = listHead;
 	BOOK *p2 = nullptr;
-	BOOK *p3 = nullptr;
-	BOOK *tp = nullptr;
 	char a = 'n';
 	int i = 0;
 	while (p1 != nullptr){//list is not empty

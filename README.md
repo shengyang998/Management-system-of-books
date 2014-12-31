@@ -30,7 +30,7 @@ This is my first project at college. It is built to manage books. It is built by
 
 	main.h：
 		包含BOOK结构的定义
-		include了所有需要的头文件
+		include所有需要的头文件
 
 	main.cpp：
 		略

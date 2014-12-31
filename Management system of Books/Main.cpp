@@ -3,7 +3,7 @@
 int menu();
 int submenu(BOOK *listHead);
 BOOK *input();
-void prompt_wait();
+//void prompt_wait();
 
 int main(){
 	int choice0, choice1;
@@ -28,13 +28,13 @@ int main(){
 		}
 		}
 	} while (choice0 != 0);
-//end of menu
-	prompt_wait();
+	//end of menu
+	//prompt_wait();
 return 0;
 }
 
-void prompt_wait() {
-	cin.ignore(100, '\n');
-	cout << "\nPress Enter or Return to continue...";
-	cin.get();
-}
+//void prompt_wait() {
+//	cin.ignore(100, '\n');
+//	cout << "\nPress Enter or Return to continue...";
+//	cin.get();
+//}

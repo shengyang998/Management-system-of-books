@@ -12,6 +12,9 @@ BOOK *input(){
 		while (!dataInput.eof()){//Load data from file until to the end of the end
 			n++;
 			getline(dataInput, line);
+			if (line == ""){
+				continue;
+			}
 			istringstream rec(line);
 			//get ISBN Category BookName AuthorName Price
 			rec >> book->ISBN >> book->category >> book->bookName >> book->authorName >> book->price;

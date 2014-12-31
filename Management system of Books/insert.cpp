@@ -7,13 +7,13 @@ int insert(BOOK *listHead, bool flag){
 	char a;
 	switch (flag){
 	case 0:{//if has not been sorted
-		cout << "The list has not been sorted, do you want to sort it before inserting?[Y/N]\n";
+		cout << "The list has not been sorted by price, do you want to sort it before inserting?[Y/N]\n";
 		while (!(cin >> a) || ((a != 'y') && (a != 'Y') && (a != 'n') && (a != 'N'))){
 			cin.clear();
 			cin.ignore(100, '\n');
 			cout << "Error when you choose what to do. Please try again: ";
 		}
-		if (a == 'y' || a == 'Y'){//sort and keep on
+		if (a == 'y' || a == 'Y'){//sort and go on
 			sortbyprice(listHead);
 			flag = 1;
 		}
@@ -83,7 +83,7 @@ int insert(BOOK *listHead, bool flag){
 		BOOK *p = listHead;
 		BOOK *tptr = nullptr;
 		while (p != nullptr){//traverse the list
-			if ((p->ISBN == book->ISBN) || (p->authorName == book->authorName) || (p->bookName == book->bookName) 
+			if ((p->ISBN == book->ISBN) || (p->authorName == book->authorName) || (p->bookName == book->bookName)
 				|| (p->category == book->category)){//hitted
 				cout << "There is already a same book, please chack your input" << endl;
 				return -1;//Find the same book and stop the function running

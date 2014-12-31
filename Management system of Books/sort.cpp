@@ -2,11 +2,11 @@
 
 BOOK *sortbyprice(BOOK *listHead){
 
-	BOOK *p = listHead, *pf = nullptr;
+	BOOK *p = listHead;
 
 	BOOK *pm = p, *tp = nullptr;
 
-	for (int i = 0; p != nullptr; pf = p, p = p->next, i++){
+	for (int i = 0; p != nullptr; p = p->next, i++){
 		tp = p->next;
 		pm = p;
 
@@ -32,11 +32,11 @@ BOOK *sortbyprice(BOOK *listHead){
 
 BOOK *sortbySV(BOOK *listHead){
 
-	BOOK *p = listHead, *pf = nullptr;
+	BOOK *p = listHead;
 
 	BOOK *pm = p, *tp = nullptr;
 
-	for (int i = 0; p != nullptr; pf = p, p = p->next, i++){
+	for (int i = 0; p != nullptr; p = p->next, i++){
 		tp = p->next;
 		pm = p;
 

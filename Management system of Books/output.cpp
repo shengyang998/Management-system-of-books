@@ -10,7 +10,7 @@ int output(BOOK *listHead){//0:succeed 1:cannot open the file
 		for (BOOK *p = listHead; p != 0; p = p->next){//do until at the end of the list
 			//Output to the file
 			dataOutput << p->ISBN << '|' << p->category << '|' << p->bookName << '|' << p->authorName
-				<< '|' << p->price << '|' << p->totalSalesVolume << endl;
+				<< '|' << p->price << '|' << p->totalSalesVolume << endl << endl;
 		}
 		dataOutput << "This is the end.";
 		dataOutput.close();//close the file
@@ -31,7 +31,7 @@ int output(vector<BOOK> p){
 			<< "ISBN|category|BookName|AuthorName|Price|TotalSalesVolume\n\n";
 		for (auto it = p.begin(); it < p.end(); it++){//iterator it
 			dataOutput << it->ISBN << '|' << it->category << '|' << it->bookName << '|' << it->authorName
-				<< '|' << it->price << '|' << it->totalSalesVolume << endl;
+				<< '|' << it->price << '|' << it->totalSalesVolume << endl << endl;
 		}
 		dataOutput << "This is the end.";
 		dataOutput.close();//close the file

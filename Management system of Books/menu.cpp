@@ -36,9 +36,9 @@ int submenu(BOOK *listHead){
 			<< "*    3.Remove and output          4.Sort by Price and output                  *\n"
 			<< "*    5.Sort by Sales Volume and output                                        *\n"
 			<< "*    6.Output from a selected price interval                                  *\n"
-			<< "*    0.Return to main menu                                                    *\n"
+			<< "*    7.Print on screen            0.Return to main menu                       *\n"
 			<< "*******************************************************************************\n";
-		while (!(cin >> choice) || (choice > 6 || choice < 0)){
+		while (!(cin >> choice) || (choice > 7 || choice < 0)){
 			cin.clear();
 			cin.ignore(100, '\n');
 			cout << "Error when you choose what to do. Please try again: ";
@@ -66,7 +66,8 @@ int submenu(BOOK *listHead){
 				int flag = 0;
 				cout << "Input what you want to delete, including ISBN Category BookName or AutherName: \n";
 				getline(cin, delstr);
-				if (flag = del(listHead, delstr) == 0){
+				flag = del(listHead, delstr);
+				if (flag == 0){
 					cout << "\nDelete succeed!\nThe data has been output to ./outData.txt\n";
 				}
 				else if (flag == 1){
@@ -78,9 +79,8 @@ int submenu(BOOK *listHead){
 				break;
 			}
 			case 4:{
-				if (listHead = sortbyprice(listHead)){
-					sortFlag = 1;
-				}
+				listHead = sortbyprice(listHead);
+                sortFlag = 1;
 				if (output(listHead) == 0){
 					cout << "Output succeed.\n";
 				}
@@ -109,7 +109,7 @@ int submenu(BOOK *listHead){
 				}
 				cin.ignore(100, '\n');
 				cout << "Please input the maximal price:";
-				
+
 				while (!(cin >> maxPrice)){
 					cin.clear();
 					cin.ignore();
@@ -122,6 +122,14 @@ int submenu(BOOK *listHead){
 					cout << "Error.\n";
 				}
 				break;
+			}
+			case 7:{
+			    cout << "The books are:\n";
+				for (BOOK *ptr = listHead; ptr != nullptr; ptr = ptr->next){
+					cout << ptr->ISBN << '|' << ptr->category << '|' << ptr->bookName << '|' << ptr->authorName
+						<< '|' << ptr->price << '|' << ptr->totalSalesVolume << endl;
+					break;
+				}
 			}
 			default:{
 				cout << "\nError when you choose the number.";
